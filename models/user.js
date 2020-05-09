@@ -41,7 +41,12 @@ const userSchema = new Schema({
         type:Array,
         default:[],
     }
-});
+},
+{
+    timestamps:true,
+}
+
+);
 
 //creating virtuals
 //virtuals are kind of custom functions which are used to pull something from data 
@@ -71,13 +76,7 @@ userSchema.virtual("password")
         })
         .get(function(){
             return this._password;
-        })
-
-
-
-
-
-
+        });
 
 //before export we need to add method for encrypting the password!
 userSchema.method = {
