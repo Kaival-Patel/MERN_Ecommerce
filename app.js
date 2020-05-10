@@ -19,11 +19,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-//My routes
-/*lets say my domain is xyz.com, here we can surely do like "/logout" but its a good practice
-that we access our backend with xyz.com/api/*anyroutes* that is through /api
-now our Authentication routes will come from authRoutes
-*/
+
 
 
 
@@ -48,6 +44,11 @@ app.use(bodyParser.json());
 app.use(cookieParser());    
 app.use(cors());  
 
+//My routes
+/*lets say my domain is xyz.com, here we can surely do like "/logout" but its a good practice
+that we access our backend with xyz.com/api/*anyroutes* that is through /api
+now our Authentication routes will come from authRoutes
+*/
 //put routes after the bodyparser and middlewares
 app.use("/api",authRoutes);
 
