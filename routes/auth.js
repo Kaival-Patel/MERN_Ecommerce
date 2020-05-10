@@ -4,17 +4,17 @@
 ROUTING MECHANISM HERE :-
 ROUTES   =>      AUTHENTICATION 
                /        |       \
-    signup(POST)  signin(POST)  logout (GET)
+    signup(POST)  signin(POST)  logout(GET)
 */ 
 
-//import express and router
-const express = require("express");
-const router = express.Router();
+//import express, router and other methods from controller
+var express = require("express");
+var router = express.Router();
+const {signout} = require("../controllers/auth")
+
 
 //GET method to signout the user!!
-router.get("/signout",(req,res)=>{
-    res.send("OK Signing Out!")
-});
+router.get("/signout",signout)
 
 
 
