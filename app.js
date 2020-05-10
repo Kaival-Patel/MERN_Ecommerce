@@ -24,7 +24,7 @@ const cors = require("cors");
 that we access our backend with xyz.com/api/*anyroutes* that is through /api
 now our Authentication routes will come from authRoutes
 */
-app.use("/api",authRoutes);
+
 
 
 
@@ -46,8 +46,10 @@ mongoose.connect(process.env.DATABASE,
 //MiddleWares
 app.use(bodyParser.json());    
 app.use(cookieParser());    
-app.use(cors());    
+app.use(cors());  
 
+//put routes after the bodyparser and middlewares
+app.use("/api",authRoutes);
 
 //PORT
 const port = 8000;

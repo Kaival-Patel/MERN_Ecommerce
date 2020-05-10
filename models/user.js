@@ -79,7 +79,7 @@ userSchema.virtual("password")
         });
 
 //before export we need to add method for encrypting the password!
-userSchema.method = {
+userSchema.methods = {
     //we need to create the method authenticate for the users to login
     // here we only will return true or false
     authenticate : function(plainpassword){
