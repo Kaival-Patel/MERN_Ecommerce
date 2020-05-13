@@ -8,11 +8,15 @@ from npm
 require('dotenv').config()
 
 
-//importing mongoose,express,authRoutes
+//importing mongoose,express,Routes
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+
+
+//my routes
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user")
 
 //we are using these packages for middleware processing
 const bodyParser = require("body-parser");
@@ -51,6 +55,7 @@ now our Authentication routes will come from authRoutes
 */
 //put routes after the bodyparser and middlewares
 app.use("/api",authRoutes);
+app.use("/api",userRoutes);
 
 //PORT
 const port = 8000;

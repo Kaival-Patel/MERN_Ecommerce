@@ -10,7 +10,7 @@ ROUTES   =>      AUTHENTICATION
 //import express, router and other methods from controller
 var express = require("express");
 var router = express.Router();
-const {signout, signup , signin} = require("../controllers/auth")
+const {signout, signup , signin , isSignedIn} = require("../controllers/auth")
 const {check} = require('express-validator')
 //POST method is used to pass any data
 /*while signing the user we want to check the validation like if email is not , say 'a.com' 
@@ -40,6 +40,11 @@ router.post(
 
 //GET method (used to get any data) to signout the user!!
 router.get("/signout",signout)
+
+router.get("/testroute",isSignedIn,(req,res)=>{
+    res.json(req.auth);
+});
+
 
 
 
