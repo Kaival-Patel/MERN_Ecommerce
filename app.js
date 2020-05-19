@@ -16,7 +16,9 @@ const app = express();
 
 //my routes
 const authRoutes = require("./routes/auth");
-const userRoutes = require("./routes/user")
+const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
+const productRoutes = require("./routes/product");
 
 //we are using these packages for middleware processing
 const bodyParser = require("body-parser");
@@ -56,6 +58,8 @@ now our Authentication routes will come from authRoutes
 //put routes after the bodyparser and middlewares
 app.use("/api",authRoutes);
 app.use("/api",userRoutes);
+app.use("/api",categoryRoutes);
+app.use("/api",productRoutes);
 
 //PORT
 const port = 8000;

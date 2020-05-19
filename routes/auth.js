@@ -22,7 +22,7 @@ router.post(
     [
         check("name","Name should be 3 characters long and must contains letters").isLength({min:3}).isAlpha("en-IN"),
         check("email","Please Enter Valid Email").isEmail(),
-        check("password","Please Enter Password that contains numbers and alphabets with minimum 6 characters").isLength({min:6}).isAlpha("en-IN"),
+        check("password","Please Enter Password that contains numbers and alphabets with minimum 6 characters").isLength({min:6}),
     ],signup);
 
 //signin route (POST)
